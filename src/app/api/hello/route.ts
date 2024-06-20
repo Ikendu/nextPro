@@ -1,5 +1,19 @@
 import { NextResponse } from "next/server";
+import { limiter } from "../config/limiter";
 
 export async function GET() {
-  return NextResponse.json({ message: "route says hi" });
+  const remaining = await limiter.removeTokens(1);
+
+  if (remaining < 0) {
+    return new NextResponse(null, {
+      status: 403,
+      statusText: `Too many request`,
+      headers: {
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "text/plain",
+      },
+    });
+  }
+
+  return NextResponse.json({ message: "route says hi", Remaining: remaining });
 }
