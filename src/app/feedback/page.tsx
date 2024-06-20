@@ -30,6 +30,7 @@ export default function page() {
     });
     const result = await res.json();
     console.log(`THE CLIENT`, result);
+    router.push(`/thankyou`);
   };
   return (
     <div className="w-full bg-slate-600 h-screen text-white/70">
