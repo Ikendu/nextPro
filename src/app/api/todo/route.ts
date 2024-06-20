@@ -28,3 +28,23 @@ export async function DELETE(request: Request) {
   console.log(`Deleted`, resp);
   return NextResponse.json({ Message: `Todo ${id} Deleted` });
 }
+
+export async function POST(request: Request) {
+  const { userId, title }: Partial<Todo> = await request.json();
+  if (!userId || !title) {
+    return NextResponse.json({ Message: `Required data not found` });
+  }
+
+  const resp = await fetch(DATA_SOURCE_URL, {
+    method: `POST`,
+    headers: {
+      "Content-Type": "application/json",
+      "API-Key": API_KEY,
+    },
+    body: JSON.stringify({ userId, title, completed: false }),
+  });
+
+  const newTodo: Todo = await resp.json();
+
+  return NextResponse.json(newTodo);
+}
