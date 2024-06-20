@@ -16,7 +16,6 @@ export async function DELETE(request: Request) {
 
   // check for id
   if (!id) return NextResponse.json({ Message: `Togo id required` });
-
   // delete the togo from the api source
   const resp = fetch(`${DATA_SOURCE_URL}/${id}`, {
     method: `DELETE`,
@@ -34,7 +33,6 @@ export async function POST(request: Request) {
   if (!userId || !title) {
     return NextResponse.json({ Message: `Required data not found` });
   }
-
   const resp = await fetch(DATA_SOURCE_URL, {
     method: `POST`,
     headers: {
@@ -43,8 +41,25 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({ userId, title, completed: false }),
   });
-
   const newTodo: Todo = await resp.json();
-
   return NextResponse.json(newTodo);
+}
+
+export async function PUT(request: Request) {
+  const { id, userId, title, completed }: Todo = await request.json();
+
+  if (!id || !userId || !title || typeof completed !== "boolean") {
+    return NextResponse.json({ Message: `Required updates not complete` });
+  }
+
+  const resp = await fetch(`${DATA_SOURCE_URL}/${id}`, {
+    method: `PUT`,
+    headers: {
+      "Content-Type": "application/json",
+      "API-key": API_KEY,
+    },
+    body: JSON.stringify({ userId, title, completed }),
+  });
+  const updatedTodo = await resp.json();
+  return NextResponse.json(updatedTodo);
 }
