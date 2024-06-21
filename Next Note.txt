@@ -1,0 +1,35 @@
+ISR: Increamental static regeneration
+SSR: static site regeneration
+SSG: static site generation
+
+Generating a random token from the command prompt
+1. Node (enter)
+2. require("crypto").randomBytes(20).toString("hex")
+
+Deply next app
+https://vercel.com/new
+
+Start a different server for the backend in Nextjs
+npx json-server -w db.json -p 3500 -h 127.0.0.1 
+
+Things to learn
+SSH
+React
+Webpack + Parcel + Vite
+Node.js + Express
+Front End Performance Optimizations
+Back End Performance Optimization
+Progressive Web Apps
+Typescript
+Software Testing
+Server Side Rendering and Client Side Rendering
+Front End Security Optimizations
+Back End Security Optimizations
+Docker
+Redis
+Sessions + JWT
+Amazon Web Services ("AWS")
+Serverless Architecture
+Continuous Integration
+Continuous Delivery
+Continuous Deployment
