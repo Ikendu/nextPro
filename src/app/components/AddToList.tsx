@@ -9,7 +9,7 @@ const initState: Partial<Todo> = {
   title: "",
 };
 
-export default function AddTodo() {
+export default function AddToLists() {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -25,7 +25,8 @@ export default function AddTodo() {
 
     setIsFetching(true);
 
-    const res = await fetch(`http://127.0.0.1:3500/todos`, {
+    const res = await fetch(`http://127.0.0.1:3500/lists`, {
+      //no list route
       method: "POST",
       headers: {
         "Content-Type": "application/json",

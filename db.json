@@ -15,7 +15,7 @@
     {
       "userId": 1,
       "title": "Go to Work ⚒",
-      "completed": false,
+      "completed": true,
       "id": "3"
     },
     {
@@ -25,10 +25,49 @@
       "completed": false
     },
     {
+      "id": "28f8",
       "userId": 1,
-      "title": "hey hey",
-      "id": "5",
+      "title": "newman"
+    },
+    {
+      "id": "f75d",
+      "userId": 1,
+      "title": "hey new",
+      "completed": true
+    },
+    {
+      "id": "44e1",
+      "userId": 1,
+      "title": "read java",
       "completed": false
+    },
+    {
+      "id": "e58b",
+      "userId": 1,
+      "title": "Others courese",
+      "completed": false
+    }
+  ],
+  "lists": [
+    {
+      "id": "28f8",
+      "userId": 1,
+      "title": "newman"
+    },
+    {
+      "id": "f75d",
+      "userId": 1,
+      "title": "hey new"
+    },
+    {
+      "id": "44e1",
+      "userId": 1,
+      "title": "read java"
+    },
+    {
+      "id": "2e89",
+      "userId": 1,
+      "title": "werere"
     }
   ]
 }

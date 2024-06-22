@@ -12,6 +12,12 @@ https://vercel.com/new
 Start a different server for the backend in Nextjs
 npx json-server -w db.json -p 3500 -h 127.0.0.1 
 
+using group state change//
+ 	setData((prevData) => ({ ...prevData, [name]: e.target.value }));
+for perform hard navigation and update items//
+	prefetch={false}
+
+
 Things to learn
 SSH
 React
